@@ -1,6 +1,6 @@
 package com.Impl;
 
-public interface lmplcallback {
+public interface Jude {
 	
 	public void callback();
 }

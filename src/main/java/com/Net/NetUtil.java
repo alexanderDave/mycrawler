@@ -2,6 +2,10 @@ package com.Net;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -73,5 +77,27 @@ public class NetUtil {
 		
 		return in;
 	}
+	
+	/**
+	 * @author davedaiw
+	 * @param map
+	 * @param name
+	 * @return
+	 */
+	public static String wrongWeblist(HashMap<String, List<String>> map,String name){
+		StringBuilder sb = new StringBuilder();
+		
+		List<String> list = map.get(name);
+		for (String string : list) {
+			int responseCode = getRespCode(getConnection(string));
+			if (! (responseCode == 200)) {
+				sb.append("From url:"+ name +" to page "+ string +" went wrong!@responese code "+ responseCode +" ;"+"\r\n");
+			}
+		}
+		
+		return sb.toString();
+	}
+	
+	
 	
 }
