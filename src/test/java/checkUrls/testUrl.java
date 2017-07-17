@@ -28,13 +28,13 @@ public class testUrl {
 		
 		//save to local
 		//FileUtil.writeFile(NetUtil.getRespBody(NetUtil.getConnection(murl)));
-		
+		/**
 //		获取输入网址的所有url并保存
 		InputStream in = NetUtil.getRespBody(NetUtil.getConnection(murl));
 		Listview.templist = HtmlPaser.getAllurls(FileUtil.getString(in)); 
 		
 		FileUtil.writeFile(Listview.templist);
-		
+		*/
 //		
 		
 //		
@@ -60,4 +60,53 @@ public class testUrl {
 		
 		
 	}
+	
+	
+interface FlyBehavior{
+	public void fly();
+}
+	
+	
+interface QuackBehavor{
+	public void quack();
+}
+
+class Quacker implements QuackBehavor{
+
+	public void quack() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+class Duck{
+	QuackBehavor quackBehavor;
+	
+	public void performQuack(){
+		quackBehavor.quack();
+	}
+}
+	
+class musualDuck extends Duck{
+	public musualDuck(){
+		quackBehavor = new Quacker();
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

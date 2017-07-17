@@ -1,6 +1,7 @@
 package com.Utils;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -169,5 +170,11 @@ public class FileUtil {
 			e.printStackTrace();
 		}
 		return properties.getProperty(key);
+	}
+	
+	public static InputStream StringToInputstream(String s){
+		
+		ByteArrayInputStream bai = new ByteArrayInputStream(s.getBytes());
+		return bai;
 	}
 }
