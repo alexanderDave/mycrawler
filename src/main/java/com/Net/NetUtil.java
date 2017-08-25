@@ -29,7 +29,9 @@ public class NetUtil {
 		
 		HttpResponse httpResponse = null;
 		HttpClient client = new DefaultHttpClient();
+		
 		HttpGet httpGet = new HttpGet(urls);
+		httpGet.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0");
 		try {
 			httpResponse = client.execute(httpGet);
 		} catch (ClientProtocolException e) {
